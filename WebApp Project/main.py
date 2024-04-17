@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, jsonify, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -254,5 +255,5 @@ def report_pause_event():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
 
